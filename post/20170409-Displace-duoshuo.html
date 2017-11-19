@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 替换多说到网易云跟帖 · 初学者</title><meta name="description" content="替换多说到网易云跟帖 - Yunxu"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="http://onshks1vz.bkt.clouddn.com/20170901194821_qHtiKc_logo_transparent.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://github.com/yunxu-it/yunxu-it.github.io/atom.xml" title="初学者"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="http://onshks1vz.bkt.clouddn.com/logo_blue_round.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/yunxu-it" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/links" target="_self" class="nav-list-link">LINKS</a></li><li class="nav-list-item"><a href="/about" target="_self" class="nav-list-link">ABOUT</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">替换多说到网易云跟帖</h1><div class="post-info">Apr 9, 2017</div><div class="post-content"><p><a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="noopener">多说</a>马上就要关闭了,相信大家都接到了消息。<br>至于换成哪一家就是个问题<br>目前备选的有:</p>
+<blockquote>
+<p><a href="http://changyan.kuaizhan.com/" target="_blank" rel="noopener">畅言</a><br><a href="https://gentie.163.com/index.html" target="_blank" rel="noopener">网易云跟帖</a><br><a href="http://www.uyan.cc/" target="_blank" rel="noopener">友言</a></p>
+</blockquote>
+<p>还有Hexo默认自带的<a href="https://disqus.com/" target="_blank" rel="noopener">disqus</a><br><a id="more"></a><br>这几个当中，除了友言，我都尝试过。<br>我最开始准备换的是畅言，我就不说优点了，优点官网写的都是，我说说不适合我的地方</p>
+<ul>
+<li>过于花哨，它有积分，足迹之类的功能，但是我连个昵称和头像都改不过来</li>
+<li>过于复杂，需要网站备案审核</li>
+</ul>
+<p>目前就这两个问题，所以我换成了自带的disqus，由于是自带，所以注册一个账号，修改下shortname就好了，它的问题就是，</p>
+<ul>
+<li>加载慢，知道不是它的原因，但是我能怎么办，我也很绝望啊</li>
+</ul>
+<p>昨天在<a href="http://gank.io/" target="_blank" rel="noopener">干货集中营</a>看到他们换成了网易云跟帖，觉得挺简洁的，就去试了试，真..简洁。</p>
+<h3 id="重点来了"><a href="#重点来了" class="headerlink" title="重点来了"></a>重点来了</h3><h4 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h4><ul>
+<li>打开<a href="https://gentie.163.com/index.html" target="_blank" rel="noopener">网易云跟帖</a></li>
+<li>填写基本信息<br><img src="http://onshks1vz.bkt.clouddn.com/20170409181613_c03HEn_2017-04-09%2018.01.03.jpeg" alt=""></li>
+<li>填写站长信息<br><img src="http://onshks1vz.bkt.clouddn.com/20170409181613_ou9W0k_2017-04-09%2018.01.17.jpeg" alt=""></li>
+<li>然后就是些基本的设置(可以后面做)</li>
+<li>找到web代码<br><img src="http://onshks1vz.bkt.clouddn.com/20170409181614_TS995U_2017-04-09%2018.00.44.jpeg" alt=""></li>
+<li>留待使用</li>
+</ul>
+<h4 id="配置插件（以indigo主题为例）"><a href="#配置插件（以indigo主题为例）" class="headerlink" title="配置插件（以indigo主题为例）"></a>配置插件（以indigo主题为例）</h4><ul>
+<li>创建themes/indigo/layout/_partial/plugins/wangyi.ejs</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.wangyi</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"cloud-tie-wrapper"</span> <span class="attr">class</span>=<span class="string">"cloud-tie-wrapper"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        var cloudTieConfig = &#123;</span></span><br><span class="line"><span class="undefined">            url: document.location.href,</span></span><br><span class="line"><span class="undefined">            sourceId: "",</span></span><br><span class="line"><span class="undefined">            productKey: "2b8aa5bc1c25403abd8feb7243b5f6a7",</span></span><br><span class="line"><span class="undefined">            target: "cloud-tie-wrapper"</span></span><br><span class="line"><span class="undefined">        &#125;;</span></span><br><span class="line"><span class="undefined">        var yunManualLoad = true;</span></span><br><span class="line"><span class="undefined">        Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
+<p><em>就是用首位两行包裹住刚才找到的web代码</em></p>
+<ul>
+<li>找到<code>themes/indigo/layout/_partial/post/comment.ejs</code></li>
+<li>添加<code>&lt;%- partial(&#39;../plugins/wangyi&#39;) %&gt;</code>，如下</li>
+</ul>
+<p><img src="http://onshks1vz.bkt.clouddn.com/20170409182538_MVNcqM_2017-04-09%2018.25.14.jpeg" alt=""></p>
+<ul>
+<li>最后，在<code>themes/indigo/_config.yml</code>添加<code>wangyi: true</code>(为false可关闭)</li>
+</ul>
+<p><img src="http://onshks1vz.bkt.clouddn.com/20170409183304_gck68b_2017-04-09%2018.32.31.jpeg" alt=""></p>
+<ul>
+<li><code>hexo clean</code></li>
+<li><code>hexo g -d</code></li>
+</ul>
+<p><strong>其他主题和评论系统可以依葫芦画瓢，大致都相同的。</strong></p>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="https://github.com/Clarence-pan/hexo-blog/commit/a6a85f89e17900d023c8c67020465830532f75bb">多说要关闭了，修改为使用搜狐畅言评论插件</a></p>
+</div></article></div></main><footer><div class="paginator"><a href="/post/20170414-Lottery-Funny.html" class="prev">PREV</a><a href="/post/20160905-Groan-Without-Being-Ill-20160905.html" class="next">NEXT</a></div><!--if theme.duoshuo--><!--    .ds-thread(data-thread-key=page.path, data-title=page.title, data-url=page.permalink, data-author-key='1')--><!--    script.--><!--        var duoshuoQuery = {short_name:"#{theme.duoshuo}"};--><!--        (function() {--><!--            var ds = document.createElement('script');--><!--            ds.type = 'text/javascript';ds.async = true;--><!--            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';--><!--            ds.charset = 'UTF-8';--><!--            (document.getElementsByTagName('head')[0]--><!--             || document.getElementsByTagName('body')[0]).appendChild(ds);--><!--        })();-->
+<div id="disqus_thread"></div><script>var disqus_shortname = 'winxo';
+var disqus_identifier = 'post/20170409-Displace-duoshuo.html';
+var disqus_title = '替换多说到网易云跟帖';
+var disqus_url = 'https://github.com/yunxu-it/yunxu-it.github.io/post/20170409-Displace-duoshuo.html';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//winxo.disqus.com/count.js" async></script><div class="copyright"><p>本站点采用<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank" style="color:#42b983"><u>知识共享 署名-非商业性使用-禁止演绎 4.0 国际许可协议</u></a>进行许可</p><p>本站点基于<a href="https://hexo.io/" target="_blank">Hexo</a>，采用主题<a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>。<span id=busuanzi_container_site_uv>本站总访问量<span id=busuanzi_value_site_uv></span> 次</span> - © 2014 - 2017</p></div><!--#[a(href=config.url)!= config.author],--></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script></body></html>

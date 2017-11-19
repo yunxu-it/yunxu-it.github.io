@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 已有Windows安装Linux双系统 · 初学者</title><meta name="description" content="已有Windows安装Linux双系统 - Yunxu"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="http://onshks1vz.bkt.clouddn.com/20170901194821_qHtiKc_logo_transparent.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://github.com/yunxu-it/yunxu-it.github.io/atom.xml" title="初学者"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="http://onshks1vz.bkt.clouddn.com/logo_blue_round.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/yunxu-it" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/links" target="_self" class="nav-list-link">LINKS</a></li><li class="nav-list-item"><a href="/about" target="_self" class="nav-list-link">ABOUT</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">已有Windows安装Linux双系统</h1><div class="post-info">Oct 27, 2014</div><div class="post-content"><p>这周Linux操作系统课程开始了，老师让我们都安装Linux，因为我现在一直在用Linux系统，用的还算熟练，今天刚好帮一个同学转系统，我就顺便写个安装教程</p>
+<blockquote>
+<p>教程以Ubuntu kylin为例，本来我是想推荐我用的Linux Mint，但是Mint初期配置有点麻烦)</p>
+</blockquote>
+<h4 id="开辟空闲分区"><a href="#开辟空闲分区" class="headerlink" title="开辟空闲分区"></a>开辟空闲分区</h4><blockquote>
+<p>因为linux和windows并不是相同的文件系统格式，所以需要给linux分出空闲分区</p>
+</blockquote>
+<ul>
+<li>在windows下，右键计算机-管理-磁盘管理</li>
+<li>选择你空闲空间还多的盘，右键-压缩卷</li>
+<li>初次使用者可以少压缩点空间出来(一般初期30G左右就差不多了，我现在是把Linux作为主系统，所以分了60G给它，<strong>我之前直接装了个32位的在16G的U盘里</strong>)<a id="more"></a>
+</li>
+</ul>
+<h4 id="U盘制作Linux启动盘"><a href="#U盘制作Linux启动盘" class="headerlink" title="U盘制作Linux启动盘"></a>U盘制作Linux启动盘</h4><p>相信装过windows的同学都知道怎么制作U盘启动盘，不过我还是顺便提一下。<br>​<br>制作材料：</p>
+<ul>
+<li><a href="http://www.dabaicai.com/" target="_blank" rel="noopener">大白菜u盘启动盘制作工具</a> </li>
+<li><a href="http://www.ubuntukylin.com/downloads/" target="_blank" rel="noopener">ubuntu kylin系统镜像文件</a></li>
+</ul>
+<p>准备完毕，可以开始制作启动盘了。</p>
+<ol>
+<li>安装大白菜（这个应该都会吧，这都不会，后面就不用看了）</li>
+<li>打开,选择ISO模式<br><img src="http://7xkns3.com1.z0.glb.clouddn.com/winxocn/images/p017.PNG" alt="ubuntu kylin"></li>
+<li>点击浏览，选择到镜像文件<br><img src="http://7xkns3.com1.z0.glb.clouddn.com/winxocn/images/p018.PNG" alt="ubuntu kylin"></li>
+<li>一键制作USB启动器<br><img src="http://7xkns3.com1.z0.glb.clouddn.com/winxocn/images/p019.PNG" alt="ubuntu kylin"></li>
+<li>选择启动到U盘，格式化，写入（其实似乎不用选择格式化，写入之前会自动格式化）<br><img src="http://7xkns3.com1.z0.glb.clouddn.com/winxocn/images/p020.PNG" alt="ubuntu kylin"></li>
+<li>等它完成，会有个测试，点取消，直接重启</li>
+<li>在启动前进入BIOS，修改为U盘优先启动（这个我未截图，百度一下，你就知道）</li>
+</ol>
+<h4 id="安装Ubuntu-kylin"><a href="#安装Ubuntu-kylin" class="headerlink" title="安装Ubuntu kylin"></a>安装Ubuntu kylin</h4><hr>
+<ul>
+<li>u盘启动后会进入Ubuntu安装界面，如下,选择安装（对于左边的语言，熟悉系统的话，我建议使用英语，因为很多时候命令行用中文很麻烦）<br><img src="http://7xkns3.com1.z0.glb.clouddn.com/winxocn/images/p006.jpg" alt="ubuntu kylin"></li>
+<li>建议此时不要连wifi，这样会安装很慢，更新可以安装完了再下<br><img src="http://7xkns3.com1.z0.glb.clouddn.com/winxocn/images/p007.jpg" alt="ubuntu kylin"></li>
+<li>继续<br><img src="http://7xkns3.com1.z0.glb.clouddn.com/winxocn/images/p008.jpg" alt="ubuntu kylin"></li>
+<li>到了下面这样，选择<strong>其他选项</strong></li>
+</ul>
+<blockquote>
+<p>之前有位同学要我帮忙安装linux mint，在我不注意的时候，直接点继续，然后……他的硬盘上只有linux了，所以，<strong>要慎重</strong></p>
+</blockquote>
+<p><img src="http://7xkns3.com1.z0.glb.clouddn.com/winxocn/images/p009.jpg" alt="ubuntu kylin"></p>
+<ul>
+<li>接下来，给linux分区<ul>
+<li>点击空闲分区<br><img src="http://7xkns3.com1.z0.glb.clouddn.com/winxocn/images/p010.jpg" alt="ubuntu kylin"></li>
+<li>设置挂载点为<strong>/boot</strong>，大小为512MB，设置为逻辑分区吧，有的电脑windows分区不同，要是这里设置为主分区，会让后面的linux分区不可用（与图不同）<br><img src="http://7xkns3.com1.z0.glb.clouddn.com/winxocn/images/p011.jpg" alt="ubuntu kylin"></li>
+<li>设置大小为2G，逻辑分区，用于<strong>交换空间</strong>（其他的都是ext4文件系统），这个交换空间好像就是虚拟内存。<br><img src="http://7xkns3.com1.z0.glb.clouddn.com/winxocn/images/p012.jpg" alt="ubuntu kylin"></li>
+<li>后面设置挂载点为<strong>/</strong>，大小为15G左右（我这是总60G的分区大小，30G的就分10G就很多了）<br><img src="http://7xkns3.com1.z0.glb.clouddn.com/winxocn/images/p013.jpg" alt="ubuntu kylin"></li>
+<li>最后设置挂载点为<strong>/home</strong>(就是用户目录)，把剩下的空间都给它，它用的最多<br><img src="http://7xkns3.com1.z0.glb.clouddn.com/winxocn/images/p014.jpg" alt="ubuntu kylin"></li>
+</ul>
+</li>
+<li>点击现在安装</li>
+<li>设置键盘啥的，选汉语</li>
+<li>用户名自己填，登陆用的</li>
+<li>密码也是，不过最好不要太长，经常要用，不嫌累的随便</li>
+<li>确定<br><img src="http://7xkns3.com1.z0.glb.clouddn.com/winxocn/images/p015.jpg" alt="ubuntu kylin"></li>
+<li>安装完成，重启</li>
+</ul>
+<hr>
+<ol>
+<li><p>开机默认启动是linux，会显示5个启动项，第一个是linux，最后那个是windows，其他的是linux的恢复模式什么的，不用管，有兴趣的可以试试<br><strong>温馨提示： 手贱之前先备份</strong></p>
+</li>
+<li><p>如果想把默认启动改为windows</p>
+<ul>
+<li><p>打开linux之后，登陆，打开终端（Ctrl+Alt+T），输入</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>输入你的密码，gedit编辑器打开</p>
+</li>
+<li><p>找到</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set default="0"</span><br></pre></td></tr></table></figure>
+<p>  改为</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set default="4"</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>保存，重启。</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>这个教程是我花两个小时写的，不是很完善，有什么问题可以在下面留言或者其他方式问我。</p>
+</div></article></div></main><footer><div class="paginator"><a href="/post/20141231-Year-2014.html" class="prev">PREV</a><a href="/post/20141004-Bored-Feeling.html" class="next">NEXT</a></div><!--if theme.duoshuo--><!--    .ds-thread(data-thread-key=page.path, data-title=page.title, data-url=page.permalink, data-author-key='1')--><!--    script.--><!--        var duoshuoQuery = {short_name:"#{theme.duoshuo}"};--><!--        (function() {--><!--            var ds = document.createElement('script');--><!--            ds.type = 'text/javascript';ds.async = true;--><!--            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';--><!--            ds.charset = 'UTF-8';--><!--            (document.getElementsByTagName('head')[0]--><!--             || document.getElementsByTagName('body')[0]).appendChild(ds);--><!--        })();-->
+<div id="disqus_thread"></div><script>var disqus_shortname = 'winxo';
+var disqus_identifier = 'post/20141027-Base-On-Windows-Install-Linux.html';
+var disqus_title = '已有Windows安装Linux双系统';
+var disqus_url = 'https://github.com/yunxu-it/yunxu-it.github.io/post/20141027-Base-On-Windows-Install-Linux.html';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//winxo.disqus.com/count.js" async></script><div class="copyright"><p>本站点采用<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank" style="color:#42b983"><u>知识共享 署名-非商业性使用-禁止演绎 4.0 国际许可协议</u></a>进行许可</p><p>本站点基于<a href="https://hexo.io/" target="_blank">Hexo</a>，采用主题<a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>。<span id=busuanzi_container_site_uv>本站总访问量<span id=busuanzi_value_site_uv></span> 次</span> - © 2014 - 2017</p></div><!--#[a(href=config.url)!= config.author],--></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script></body></html>
