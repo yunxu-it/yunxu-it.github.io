@@ -4,6 +4,7 @@
 <p>然而，官方文档对自定义字体却毫无提及。</p>
 <p>那么，直入主题，网上方法很多，最终解决方法是：</p>
 <a id="more"></a>
+
 <h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><ul>
 <li><p>把<code>filename.ttf</code>放到<code>&lt;Project Root&gt;/android/app/src/main/assets/fonts</code>文件夹下</p>
 </li>
@@ -11,28 +12,34 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ./android/.gradle</span><br><span class="line">rm -rf ./android/app/build </span><br><span class="line">cd android &amp;&amp; ./gradlew clean &amp;&amp; cd ..</span><br><span class="line">// 以上命令极为重要</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>然后应用字体</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fontFamily:<span class="string">"filename"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fontFamily:<span class="string">&quot;filename&quot;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>最后</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native run-android</span><br></pre></td></tr></table></figure>
+
 <p><em>就是这么简单，但是却坑了我将近一天</em></p>
 </li>
 </ul>
 <h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>  如果上述方法不能成功，还有其他方法尝试，但是其他方法于我无效，仅供参考。</p>
-<h5 id="其一-地址"><a href="#其一-地址" class="headerlink" title="其一(地址)"></a>其一(<a href="https://stackoverflow.com/questions/33088510/react-native-android-fontfamily-does-not-take-effect/37413939#37413939" target="_blank" rel="noopener">地址</a>)</h5><p>  Put all your fonts in you React-Native project directory</p>
+<h5 id="其一-地址"><a href="#其一-地址" class="headerlink" title="其一(地址)"></a>其一(<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/33088510/react-native-android-fontfamily-does-not-take-effect/37413939#37413939">地址</a>)</h5><p>  Put all your fonts in you React-Native project directory</p>
   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./assets/fonts/</span><br></pre></td></tr></table></figure>
+
 <p>  Add the following line in your package.json</p>
-  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"rnpm"</span>: &#123;</span><br><span class="line">  <span class="string">"assets"</span>: [<span class="string">"./assets/fonts"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;rnpm&quot;</span>: &#123;</span><br><span class="line">  <span class="string">&quot;assets&quot;</span>: [<span class="string">&quot;./assets/fonts&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>  finally run in the terminal from your project directory</p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native link</span><br></pre></td></tr></table></figure>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react<span class="literal">-native</span> link</span><br></pre></td></tr></table></figure>
+
 <p>  to use it declare this way in your styles</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fontFamily: <span class="string">'your-font-name without extension'</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fontFamily: <span class="string">&#x27;your-font-name without extension&#x27;</span></span><br></pre></td></tr></table></figure>
+
 <p>  If your font is <strong>Raleway-Bold.ttf</strong> then,</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fontFamily: <span class="string">'Raleway-Bold'</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fontFamily: <span class="string">&#x27;Raleway-Bold&#x27;</span></span><br></pre></td></tr></table></figure>
+
 <h5 id="其二-地址"><a href="#其二-地址" class="headerlink" title="其二(地址)"></a>其二(<a href="https://github.com/facebook/react-native/issues/1167">地址</a>)</h5><p>  链接中<a href="https://github.com/satya164">@satya164</a>的回复，代码太长，就不在此贴了，可以跳转过去看。</p>
 <p>  不过，其方法是对全局的字体进行设置，和我当前需求不符，有此需求的朋友可以试一试。</p>
 <h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="https://github.com/facebook/react-native/issues/1167">https://github.com/facebook/react-native/issues/1167</a></p>
-<p><a href="https://stackoverflow.com/questions/33088510/react-native-android-fontfamily-does-not-take-effect/37413939#37413939" target="_blank" rel="noopener">https://stackoverflow.com/questions/33088510/react-native-android-fontfamily-does-not-take-effect/37413939#37413939</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/33088510/react-native-android-fontfamily-does-not-take-effect/37413939#37413939">https://stackoverflow.com/questions/33088510/react-native-android-fontfamily-does-not-take-effect/37413939#37413939</a></p>
 <h4 id="BTW"><a href="#BTW" class="headerlink" title="BTW"></a>BTW</h4><blockquote>
 <p>作为一个程序员，一定要使用Google，尽量使用英语。</p>
 <p>在这次排坑的过程中，最开始我使用的关键词是<code>React Native 自定义字体 Android</code>，最后搜到的结果是千篇一律，百家争抄的景象，不仅过时已久而且格式混乱，可以说就是些垃圾。</p>

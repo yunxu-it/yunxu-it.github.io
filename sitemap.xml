@@ -44,21 +44,7 @@
   </url>
   
   <url>
-    <loc>https://github.com/yunxu-it/yunxu-it.github.io/tags/index.html</loc>
-    
-    <lastmod>2017-11-19</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/yunxu-it/yunxu-it.github.io/post/20160311-ListView-EditView-Focus-Lost.html</loc>
-    
-    <lastmod>2017-11-19</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/yunxu-it/yunxu-it.github.io/post/20150806-Linux-Android-Device-Debugging.html</loc>
+    <loc>https://github.com/yunxu-it/yunxu-it.github.io/post/20140906-Bit-Operation.html</loc>
     
     <lastmod>2017-11-19</lastmod>
     
@@ -72,6 +58,13 @@
   </url>
   
   <url>
+    <loc>https://github.com/yunxu-it/yunxu-it.github.io/post/20150806-Linux-Android-Device-Debugging.html</loc>
+    
+    <lastmod>2017-11-19</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://github.com/yunxu-it/yunxu-it.github.io/post/20140903-Linux-Mint-LAMP.html</loc>
     
     <lastmod>2017-11-19</lastmod>
@@ -79,7 +72,14 @@
   </url>
   
   <url>
-    <loc>https://github.com/yunxu-it/yunxu-it.github.io/post/20140906-Bit-Operation.html</loc>
+    <loc>https://github.com/yunxu-it/yunxu-it.github.io/post/20160311-ListView-EditView-Focus-Lost.html</loc>
+    
+    <lastmod>2017-11-19</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://github.com/yunxu-it/yunxu-it.github.io/tags/index.html</loc>
     
     <lastmod>2017-11-19</lastmod>
     
@@ -97,13 +97,6 @@
 
   
   <url>
-    <loc>https://github.com/yunxu-it/yunxu-it.github.io/categories/Android/</loc>
-    <lastmod>2020-10-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://github.com/yunxu-it/yunxu-it.github.io/categories/Others/</loc>
     <lastmod>2020-10-14</lastmod>
     <changefreq>daily</changefreq>
@@ -112,6 +105,13 @@
   
   <url>
     <loc>https://github.com/yunxu-it/yunxu-it.github.io/categories/Java/</loc>
+    <lastmod>2020-10-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/yunxu-it/yunxu-it.github.io/categories/Android/</loc>
     <lastmod>2020-10-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -139,14 +139,14 @@
   </url>
   
   <url>
-    <loc>https://github.com/yunxu-it/yunxu-it.github.io/categories/Share/</loc>
+    <loc>https://github.com/yunxu-it/yunxu-it.github.io/categories/Python/</loc>
     <lastmod>2020-10-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://github.com/yunxu-it/yunxu-it.github.io/categories/Python/</loc>
+    <loc>https://github.com/yunxu-it/yunxu-it.github.io/categories/Share/</loc>
     <lastmod>2020-10-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
