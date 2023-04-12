@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> ReactNative 使用自定义字体 · 有所思</title><meta name="description" content="ReactNative 使用自定义字体 - Yunxu"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/img/20170901194821_qHtiKc_logo_transparent.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://github.com/yunxu-it/yunxu-it.github.io/atom.xml" title="有所思"><meta name="generator" content="Hexo 5.0.2"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/img/logo_blue_round.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://www.yuque.com/moreve/nycnfq" target="_blank" class="nav-list-link">XUER</a></li><li class="nav-list-item"><a href="https://github.com/yunxu-it" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/about" target="_self" class="nav-list-link">ABOUT</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">ReactNative 使用自定义字体</h1><div class="post-info">2017年07月14日</div><div class="post-content"><p>最近公司项目要求，入了RN的坑，作为一个初学者，自然是被坑得体无完肤。</p>
+<p>今天就遇到了一个大问题，首页需要一个这样的字体，如下图：</p>
+<p><img src="/res/img/20170714212028_font.jpeg" alt="example"></p>
+<p>然而，官方文档对自定义字体却毫无提及。</p>
+<p>那么，直入主题，网上方法很多，最终解决方法是：</p>
+<a id="more"></a>
+
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><ul>
+<li><p>把<code>filename.ttf</code>放到<code>&lt;Project Root&gt;/android/app/src/main/assets/fonts</code>文件夹下</p>
+</li>
+<li><p>在项目目录下使用命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ./android/.gradle</span><br><span class="line">rm -rf ./android/app/build </span><br><span class="line">cd android &amp;&amp; ./gradlew clean &amp;&amp; cd ..</span><br><span class="line">// 以上命令极为重要</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后应用字体</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fontFamily:<span class="string">&quot;filename&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>最后</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native run-android</span><br></pre></td></tr></table></figure>
+
+<p><em>就是这么简单，但是却坑了我将近一天</em></p>
+</li>
+</ul>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>  如果上述方法不能成功，还有其他方法尝试，但是其他方法于我无效，仅供参考。</p>
+<h5 id="其一-地址"><a href="#其一-地址" class="headerlink" title="其一(地址)"></a>其一(<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/33088510/react-native-android-fontfamily-does-not-take-effect/37413939#37413939">地址</a>)</h5><p>  Put all your fonts in you React-Native project directory</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./assets/fonts/</span><br></pre></td></tr></table></figure>
+
+<p>  Add the following line in your package.json</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;rnpm&quot;</span>: &#123;</span><br><span class="line">  <span class="string">&quot;assets&quot;</span>: [<span class="string">&quot;./assets/fonts&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  finally run in the terminal from your project directory</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react<span class="literal">-native</span> link</span><br></pre></td></tr></table></figure>
+
+<p>  to use it declare this way in your styles</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fontFamily: <span class="string">&#x27;your-font-name without extension&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>  If your font is <strong>Raleway-Bold.ttf</strong> then,</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fontFamily: <span class="string">&#x27;Raleway-Bold&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="其二-地址"><a href="#其二-地址" class="headerlink" title="其二(地址)"></a>其二(<a href="https://github.com/facebook/react-native/issues/1167">地址</a>)</h5><p>  链接中<a href="https://github.com/satya164">@satya164</a>的回复，代码太长，就不在此贴了，可以跳转过去看。</p>
+<p>  不过，其方法是对全局的字体进行设置，和我当前需求不符，有此需求的朋友可以试一试。</p>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="https://github.com/facebook/react-native/issues/1167">https://github.com/facebook/react-native/issues/1167</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/33088510/react-native-android-fontfamily-does-not-take-effect/37413939#37413939">https://stackoverflow.com/questions/33088510/react-native-android-fontfamily-does-not-take-effect/37413939#37413939</a></p>
+<h4 id="BTW"><a href="#BTW" class="headerlink" title="BTW"></a>BTW</h4><blockquote>
+<p>作为一个程序员，一定要使用Google，尽量使用英语。</p>
+<p>在这次排坑的过程中，最开始我使用的关键词是<code>React Native 自定义字体 Android</code>，最后搜到的结果是千篇一律，百家争抄的景象，不仅过时已久而且格式混乱，可以说就是些垃圾。</p>
+<p>后来，我换成了<code>React Native custom font Android</code>，得到的结果多来自于Medium，stackoverflow或Github，最终也是因为它们而解决。</p>
+</blockquote>
+</div></article></div></main><footer><div class="paginator"><a href="/post/20201107-DeployHexoUseJenkinsOnLinux.html" class="prev">PREV</a><a href="/post/20170414-Lottery-Funny.html" class="next">NEXT</a></div><!--include partial/comment--><div class="copyright"><p>本站点采用<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank"><u>知识共享 署名-非商业性使用-禁止演绎 4.0 国际许可协议</u></a></p><p>本站点基于<a href="https://hexo.io/" target="_blank">Hexo</a>，采用主题<a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>。<span id=busuanzi_container_site_uv>本站总访问量<span id=busuanzi_value_site_uv></span> 次</span> - © 2014 - 2023</p></div><!--#[a(href=config.url)!= config.author],--></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></body></html>

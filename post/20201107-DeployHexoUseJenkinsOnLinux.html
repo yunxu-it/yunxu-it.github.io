@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Linux 上使用 Jenkins 设置 Hexo 自动部署排坑指南 · 有所思</title><meta name="description" content="Linux 上使用 Jenkins 设置 Hexo 自动部署排坑指南 - Yunxu"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/img/20170901194821_qHtiKc_logo_transparent.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://github.com/yunxu-it/yunxu-it.github.io/atom.xml" title="有所思"><meta name="generator" content="Hexo 5.0.2"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/img/logo_blue_round.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://www.yuque.com/moreve/nycnfq" target="_blank" class="nav-list-link">XUER</a></li><li class="nav-list-item"><a href="https://github.com/yunxu-it" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/about" target="_self" class="nav-list-link">ABOUT</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Linux 上使用 Jenkins 设置 Hexo 自动部署排坑指南</h1><div class="post-info">2020年11月07日</div><div class="post-content"><p>最近想尝试一下自动化的东西，于是就想起了 Jenkins，但是又没啥特别合适的工作流，就准备试试把我的博客设置为自动部署。</p>
+<p>设置的流程我就不细讲了，很简单，而且网上教程很多，下面就列举一些遇到的坑：</p>
+<ol>
+<li><code>Ubuntu</code> 安装 <code>jenkins</code> 报错 <code>gpg: no valid OpenPGP data found.</code></li>
+</ol>
+<p><img src="https://s2.loli.net/2023/04/12/OFCIZiK8vfn4Euo.png" alt="image-20201107193206777.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解决方式：</span><br><span class="line">使用以下命令代替</span><br><span class="line">curl -L  https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<ol start="2">
+<li><p><code>jenkins</code> 无法读取 <code>npm</code>  </p>
+<ol>
+<li>安装以下插件</li>
+</ol>
+<p><img src="https://s2.loli.net/2023/04/12/gTkjShvmlaVDNqd.png" alt="image-20201107193732043.png"></p>
+<ol start="2">
+<li>在<code>全局工具配置</code> -&gt; <code>NodeJS</code>里面配置安装版本以及需要的全局包</li>
+</ol>
+<p><img src="https://s2.loli.net/2023/04/12/ScHMVpiOd3NJLKn.png" alt="image-20201107194114810.png"></p>
+<ol start="3">
+<li>最后在工作流配置的<code>构建环境</code>选择如下配置</li>
+</ol>
+<p><img src="https://s2.loli.net/2023/04/12/t78BjZQlDvFOUEX.png" alt="image-20201107194237992.png"></p>
+</li>
+<li><p>基于 <code>gitee</code> 的项目提交触发 <code>Webhook</code> 从而自动部署</p>
+<ol>
+<li>安装 <code>gitee</code> 插件</li>
+<li>在工作流的<code>构建触发器</code> 完成以下配置（<strong>记得点击右下角的生成</strong>）</li>
+</ol>
+<p><img src="https://s2.loli.net/2023/04/12/ncGokW1gTbiwNAO.png" alt="32180DEC-D759-4AA4-B291-5A034429A4F7.png"></p>
+<ol start="3">
+<li>在 <code>gitee</code> 对应的项目设置中生成 WebHook<ol>
+<li>填写 <code>URL</code> （来自于第 2 步中<code>jenkins</code> 提供的 <code>URL</code>）</li>
+<li>填写密码 （来自第 2 步中生成的密码）</li>
+</ol>
+</li>
+<li>添加完成，可以在目录页点击测试</li>
+</ol>
+<p><img src="https://s2.loli.net/2023/04/12/2HYGVn59cLeydKZ.jpg" alt="CFC6105B-3625-4D13-823A-F4839BF78E39.png"></p>
+</li>
+<li><p>Hexo 中使用 <code>ssh</code> 自动上传，显示认证失败</p>
+<ol>
+<li>在服务器创建 ssh key</li>
+<li>由于此 key 生成于系统账号下，<code>Jenkins</code> 使用的是自己的账号权限，所以我们需要把系统的 ssh key 复制过去</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cp ~/.ssh/id_rsa.pub /var/lib/jenkins/.ssh/</span><br><span class="line">cp ~/.ssh/id_rsa /var/lib/jenkins/.ssh/</span><br><span class="line"><span class="comment"># 第一次链接需要手动把 ip 加入信任，所以可以直接把 known_hosts 文件一起复制过去</span></span><br><span class="line">cp ~/.ssh/known_hosts /var/lib/jenkins/.ssh/</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>需要把权限所有者改为 <code>Jenkins</code></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown jenkins /var/lib/jenkins/.ssh/*</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+</div></article></div></main><footer><div class="paginator"><a href="/post/20210309-Kotlin-%E5%AF%86%E5%B0%81%E7%B1%BB%E7%9A%84%E4%BC%98%E7%82%B9.html" class="prev">PREV</a><a href="/post/20170714-React-Native-Custom-Fonts.html" class="next">NEXT</a></div><!--include partial/comment--><div class="copyright"><p>本站点采用<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank"><u>知识共享 署名-非商业性使用-禁止演绎 4.0 国际许可协议</u></a></p><p>本站点基于<a href="https://hexo.io/" target="_blank">Hexo</a>，采用主题<a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>。<span id=busuanzi_container_site_uv>本站总访问量<span id=busuanzi_value_site_uv></span> 次</span> - © 2014 - 2023</p></div><!--#[a(href=config.url)!= config.author],--></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></body></html>

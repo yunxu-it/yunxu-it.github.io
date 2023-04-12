@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 在Linux Mint上安装LAMP集成环境 · 有所思</title><meta name="description" content="在Linux Mint上安装LAMP集成环境 - Yunxu"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/img/20170901194821_qHtiKc_logo_transparent.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://github.com/yunxu-it/yunxu-it.github.io/atom.xml" title="有所思"><meta name="generator" content="Hexo 5.0.2"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/img/logo_blue_round.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://www.yuque.com/moreve/nycnfq" target="_blank" class="nav-list-link">XUER</a></li><li class="nav-list-item"><a href="https://github.com/yunxu-it" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/about" target="_self" class="nav-list-link">ABOUT</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">在Linux Mint上安装LAMP集成环境</h1><div class="post-info">2014年09月03日<a target="_blank" class="post-from">翻译 · 原文地址</a></div><div class="post-content"><p>这是我在<a target="_blank" rel="noopener" href="http://community.linuxmint.com/">http://community.linuxmint.com</a>发现的教程<br>翻译改编自<a target="_blank" rel="noopener" href="http://community.linuxmint.com/tutorial/view/486">http://community.linuxmint.com/tutorial/view/486</a></p>
+<hr>
+<p>通过这个教程，你可以学会安装LAMP集成环境。</p>
+<p>如果是你在使用PHP，mySQL和Apache做网页设计或网站开发，你一定需要安装这些软件。当我安装了Linux Mint，我搜索了很多关于安装LAMP的方法，然后在一个叫Cargoship的人的网站上发现了这个教程。这个教程是针对Ubuntu的，但是我在Mint上使用，照样成功了。</p>
+<p>在这个指南中，我会向你展示怎样在Linux MInt上安装LAMP（<strong>L</strong>inux，<strong>A</strong>pache，<strong>M</strong>ySQL，<strong>P</strong>HP）集成环境。这篇指南旨在帮助那些使用Linux Mint，但还不太熟悉的人。</p>
+<p>我们不会讨论如何安装Linux，因为Linux MInt已经安装在你电脑上了。</p>
+<a id="more"></a>
+<h2 id="Install-Apache"><a href="#Install-Apache" class="headerlink" title="Install Apache"></a>Install Apache</h2><ol>
+<li><p>打开终端(应用&gt;附件&gt;终端），也可以使用Ctrl+Alt+t</p>
+</li>
+<li><p>复制下面的代码并粘贴到终端，回车</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apache2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>因为是通过管理员权限安装，终端会提示你输入密码</p>
+</li>
+</ol>
+<h2 id="Testing-Apache"><a href="#Testing-Apache" class="headerlink" title="Testing Apache"></a>Testing Apache</h2><ol>
+<li><p>打开浏览器，在地址栏输入下面地址：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/</span><br></pre></td></tr></table></figure>
+<p><a href="#Change"><font style="color:orange">如不能显示,请参照如下方式修改</font></a><br>你应该看到一个名为Apache2的文件夹，默认的/。打开它，你会看到一条消息，说：“It works!”，恭喜你！或者类似的东西！</p>
+</li>
+</ol>
+<h2 id="Install-PHP"><a href="#Install-PHP" class="headerlink" title="Install PHP"></a>Install PHP</h2><ol>
+<li><p>再次打开终端</p>
+</li>
+<li><p>复制下面的代码粘贴到终端，回车</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install php5 libapache2-mod-php5</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为了让PHP工作并与Apache兼容，我们需要重启Apache，在终端键入以下代码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="Test-PHP"><a href="#Test-PHP" class="headerlink" title="Test PHP"></a>Test PHP</h2><ol>
+<li><p>在终端输入以下代码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /var/www/testphp.php</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开一个叫<strong>testphp.php</strong>的文件,复制下面代码到文件中，保存并关闭</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> phpinfo(); <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>现在打开你的浏览器，输入下面地址</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/testphp.php</span><br></pre></td></tr></table></figure>
+
+<p><a href="#Change"><font style="color:orange">如不能显示,请参照如下方式修改</font></a><br>它会告诉你，有你的PHP的所有信息的页面。如果你有一些其他的操作系统安装PHP之前的经验，你一定见过这个页面。</p>
+</li>
+</ol>
+<h2 id="Install-MySQL"><a href="#Install-MySQL" class="headerlink" title="Install MySQL"></a>Install MySQL</h2><ol>
+<li><p>再次打开终端，输入下面代码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>（可选）为了让其他网络上的计算机，查看您所创建的服务器，必须先编辑“绑定地址”。通过打开终端编辑my.cnf文件开始。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/mysql/my.cnf</span><br></pre></td></tr></table></figure>
+
+<p>改变下行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind-address = 127.0.0.1</span><br></pre></td></tr></table></figure>
+<p>把127.0.0.1设为你的IP地址<br><font style="color:orange">在Linux Mint系列系统中，终端本身要求设定密码，不必遵循步骤3</font></p>
+</li>
+<li><p>下面可能变得很棘手，输入以下代码到终端</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root</span><br></pre></td></tr></table></figure>
+<p>复制下面的代码并粘贴</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> SET PASSWORD FOR <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> = PASSWORD(<span class="string">&#x27;yourpassword&#x27;</span>);</span></span><br></pre></td></tr></table></figure>
+
+<p>务必将yourpassword改成你选择的密码</p>
+</li>
+<li><p>我们需要安装一个简单的工具（phpmyadmin）来管理你的数据库。复制下列代码并粘贴</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libapache2-mod-auth-mysql php5-mysql phpmyadmin</span><br></pre></td></tr></table></figure>
+
+<p>接下来我们需要把PHP和MySQL连接起来，我们需要打开一个叫php.ini的文件。打开并输入下列代码：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/php5/apache2/php.ini</span><br></pre></td></tr></table></figure>
+<p>现在我们需要去掉下行的注释(<font style="color:orange">由于Apache更新,可能mysql.so已经变成msql.so,和原操作操作一样</font>)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;extension=mysql.so</span><br></pre></td></tr></table></figure>
+<p>像这样</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extension=mysql.so</span><br></pre></td></tr></table></figure>
+<p>现在需要重启Apache</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>如果你访问<a target="_blank" rel="noopener" href="http://localhost/phpmyadmin">http://localhost/phpmyadmin</a>,出现404错误，你需要配置apache2.conf</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/apache2/apache2.conf</span><br></pre></td></tr></table></figure>
+
+<p>在最后加上这句</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Include /etc/phpmyadmin/apache.conf</span><br></pre></td></tr></table></figure>
+<p>重启apache</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure>
+<hr>
+<p><a name="Change"></a><br>由于apache已经有了很大更新，默认首页发生了变化，现在变成了<code>/var/www/html/</code>下，如果想改到<code>www</code>下，输入下面代码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/apache2/sites-enabled/000-default.conf</span><br></pre></td></tr></table></figure>
+<p>找到这行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DocumentRoot /var/www/html</span><br></pre></td></tr></table></figure>
+<p>改为</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DocumentRoot /var/www</span><br></pre></td></tr></table></figure>
+<p>保存,然后重启apache</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure>
+<hr>
+<p>接下来就是你的事了。</p>
+</div></article></div></main><footer><div class="paginator"><a href="/post/20140903-Java-Handle-Excel.html" class="prev">PREV</a><a href="/post/20140713-Python-Challenge-Mark.html" class="next">NEXT</a></div><!--include partial/comment--><div class="copyright"><p>本站点采用<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank"><u>知识共享 署名-非商业性使用-禁止演绎 4.0 国际许可协议</u></a></p><p>本站点基于<a href="https://hexo.io/" target="_blank">Hexo</a>，采用主题<a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>。<span id=busuanzi_container_site_uv>本站总访问量<span id=busuanzi_value_site_uv></span> 次</span> - © 2014 - 2023</p></div><!--#[a(href=config.url)!= config.author],--></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></body></html>
