@@ -2,20 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://github.com/yunxu-it/yunxu-it.github.io/protocol/hey_code_protocol.html</loc>
-    
-    <lastmod>2023-09-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/yunxu-it/yunxu-it.github.io/protocol/hey_code_protocol_en.html</loc>
-    
-    <lastmod>2023-09-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://github.com/yunxu-it/yunxu-it.github.io/post/20230423-nature-of-parcelable.html</loc>
     
     <lastmod>2023-04-23</lastmod>
@@ -65,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://github.com/yunxu-it/yunxu-it.github.io/post/20150806-Linux-Android-Device-Debugging.html</loc>
+    <loc>https://github.com/yunxu-it/yunxu-it.github.io/post/20140903-Linux-Mint-LAMP.html</loc>
     
     <lastmod>2023-04-11</lastmod>
     
   </url>
   
   <url>
-    <loc>https://github.com/yunxu-it/yunxu-it.github.io/post/20140903-Linux-Mint-LAMP.html</loc>
+    <loc>https://github.com/yunxu-it/yunxu-it.github.io/post/20150806-Linux-Android-Device-Debugging.html</loc>
     
     <lastmod>2023-04-11</lastmod>
     
@@ -146,14 +132,14 @@
   </url>
   
   <url>
-    <loc>https://github.com/yunxu-it/yunxu-it.github.io/categories/Linux/</loc>
+    <loc>https://github.com/yunxu-it/yunxu-it.github.io/categories/Java/</loc>
     <lastmod>2023-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://github.com/yunxu-it/yunxu-it.github.io/categories/Java/</loc>
+    <loc>https://github.com/yunxu-it/yunxu-it.github.io/categories/Linux/</loc>
     <lastmod>2023-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -181,13 +167,6 @@
   </url>
   
   <url>
-    <loc>https://github.com/yunxu-it/yunxu-it.github.io/categories/Linux/Jenkins/</loc>
-    <lastmod>2023-09-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://github.com/yunxu-it/yunxu-it.github.io/categories/Python/</loc>
     <lastmod>2023-09-03</lastmod>
     <changefreq>daily</changefreq>
@@ -196,6 +175,13 @@
   
   <url>
     <loc>https://github.com/yunxu-it/yunxu-it.github.io/categories/ReactNative/</loc>
+    <lastmod>2023-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/yunxu-it/yunxu-it.github.io/categories/Linux/Jenkins/</loc>
     <lastmod>2023-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
