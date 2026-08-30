@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://winxo.cn/portfolio/</loc>
+    
+    <lastmod>2026-08-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://winxo.cn/post/20260820-economic-way-of-thinking-13/</loc>
     
     <lastmod>2026-08-20</lastmod>
@@ -56,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://winxo.cn/post/20260820-economic-way-of-thinking-05/</loc>
+    <loc>https://winxo.cn/post/20260820-economic-way-of-thinking-06/</loc>
     
     <lastmod>2026-08-20</lastmod>
     
@@ -65,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://winxo.cn/post/20260820-economic-way-of-thinking-06/</loc>
+    <loc>https://winxo.cn/post/20260820-economic-way-of-thinking-05/</loc>
     
     <lastmod>2026-08-20</lastmod>
     
@@ -92,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://winxo.cn/post/20260820-economic-way-of-thinking-03/</loc>
+    <loc>https://winxo.cn/post/20260820-economic-way-of-thinking-01/</loc>
     
     <lastmod>2026-08-20</lastmod>
     
@@ -110,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://winxo.cn/post/20260820-economic-way-of-thinking-01/</loc>
+    <loc>https://winxo.cn/post/20260820-economic-way-of-thinking-03/</loc>
     
     <lastmod>2026-08-20</lastmod>
     
@@ -166,7 +175,7 @@
 
   <url>
     <loc>https://winxo.cn/</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -174,35 +183,35 @@
   
   <url>
     <loc>https://winxo.cn/tags/Android/</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://winxo.cn/tags/Hilt/</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://winxo.cn/tags/Dagger/</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://winxo.cn/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://winxo.cn/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%9A%84%E6%80%9D%E7%BB%B4%E6%96%B9%E5%BC%8F/</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -211,14 +220,14 @@
   
   <url>
     <loc>https://winxo.cn/categories/Android/</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://winxo.cn/categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
